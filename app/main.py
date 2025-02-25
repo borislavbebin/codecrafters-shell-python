@@ -20,7 +20,7 @@ def main():
                     print(f"{args[1]} is a shell builtin")
                     continue
                 else:
-                    print(f"{' '.join(args[1:])}: command not found")
+                    print(f"{' '.join(args[1:])}: not found")
                     continue
             print(f"{command}: command not found")
 
