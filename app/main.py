@@ -11,10 +11,14 @@ def main():
         if command == "exit 0":
             break
         else:
-            commands = command.split(" ")
-            if commands[0] == "echo":
-                print(" ".join(commands[1:]))
+            args = command.split(" ")
+            if args[0] == "echo":
+                print(" ".join(args[1:]))
                 continue
+            elif args[0] == "type":
+                if args[1] in ["exit", "echo"]:
+                    print(f"{args[1]} is a shell builtin")
+                    continue
             print(f"{command}: command not found")
 
 
