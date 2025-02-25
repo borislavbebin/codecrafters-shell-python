@@ -19,6 +19,9 @@ def main():
                 if args[1] in ["exit", "echo", "type"]:
                     print(f"{args[1]} is a shell builtin")
                     continue
+                else:
+                    print(f"{' '.join(args[1:])}: command not found")
+                    continue
             print(f"{command}: command not found")
 
 
