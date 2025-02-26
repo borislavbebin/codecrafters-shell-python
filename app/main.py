@@ -1,5 +1,6 @@
 import sys
 import shutil
+import subprocess
 
 
 def main():
@@ -16,6 +17,8 @@ def main():
             if args[0] == "echo":
                 print(" ".join(args[1:]))
                 continue
+            elif path := shutil.which(args[0]):
+                subprocess.run(args)
             elif args[0] == "type":
                 if args[1] in ["exit", "echo", "type"]:
                     print(f"{args[1]} is a shell builtin")
