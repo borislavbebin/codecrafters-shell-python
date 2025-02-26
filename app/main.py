@@ -13,7 +13,7 @@ def main():
         if command == "exit 0":
             break
         else:
-            args = command.split(" ")
+            args = command.split()
             if args[0] == "echo":
                 print(" ".join(args[1:]))
                 continue
