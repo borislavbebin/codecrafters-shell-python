@@ -1,4 +1,5 @@
 import sys
+import shutil
 
 
 def main():
@@ -19,6 +20,8 @@ def main():
                 if args[1] in ["exit", "echo", "type"]:
                     print(f"{args[1]} is a shell builtin")
                     continue
+                elif path := shutil.which(args[1]):
+                    print(f"{args[1:]} is {path}")
                 else:
                     print(f"{' '.join(args[1:])}: not found")
                     continue
