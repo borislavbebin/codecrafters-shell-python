@@ -22,6 +22,7 @@ def main():
                     continue
                 elif path := shutil.which(args[1]):
                     print(f"{command[5:]} is {path}")
+                    continue
                 else:
                     print(f"{' '.join(args[1:])}: not found")
                     continue
