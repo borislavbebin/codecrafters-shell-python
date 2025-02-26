@@ -21,7 +21,7 @@ def main():
                     print(f"{args[1]} is a shell builtin")
                     continue
                 elif path := shutil.which(args[1]):
-                    print(f"{args[1:]} is {path}")
+                    print(f"{command[5:]} is {path}")
                 else:
                     print(f"{' '.join(args[1:])}: not found")
                     continue
