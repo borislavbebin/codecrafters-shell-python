@@ -19,6 +19,7 @@ def main():
                 continue
             elif path := shutil.which(args[0]):
                 subprocess.run(args)
+                continue
             elif args[0] == "type":
                 if args[1] in ["exit", "echo", "type"]:
                     print(f"{args[1]} is a shell builtin")
