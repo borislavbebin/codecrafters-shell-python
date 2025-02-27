@@ -27,7 +27,7 @@ def main():
                 else:
                     print(f"{' '.join(args[1:])}: not found")
             elif args[0] == "pwd":
-                print(os.getcwd)
+                print(os.getcwd())
             else:
                 print(f"{command}: command not found")
 
