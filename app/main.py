@@ -1,6 +1,7 @@
 import sys
 import shutil
 import subprocess
+import os
 
 
 def main():
@@ -16,21 +17,19 @@ def main():
             args = command.split()
             if args[0] == "echo":
                 print(" ".join(args[1:]))
-                continue
             elif path := shutil.which(args[0]):
                 subprocess.run(args)
-                continue
             elif args[0] == "type":
                 if args[1] in ["exit", "echo", "type"]:
                     print(f"{args[1]} is a shell builtin")
-                    continue
                 elif path := shutil.which(args[1]):
                     print(f"{command[5:]} is {path}")
-                    continue
                 else:
                     print(f"{' '.join(args[1:])}: not found")
-                    continue
-            print(f"{command}: command not found")
+            elif args[0] == "pwd":
+                print(os.getcwd)
+            else:
+                print(f"{command}: command not found")
 
 
 if __name__ == "__main__":
