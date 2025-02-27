@@ -20,7 +20,7 @@ def main():
             elif path := shutil.which(args[0]):
                 subprocess.run(args)
             elif args[0] == "type":
-                if args[1] in ["exit", "echo", "type", "pwd"]:
+                if args[1] in ["exit", "echo", "type", "pwd", "cd"]:
                     print(f"{args[1]} is a shell builtin")
                 elif path := shutil.which(args[1]):
                     print(f"{command[5:]} is {path}")
@@ -28,6 +28,8 @@ def main():
                     print(f"{' '.join(args[1:])}: not found")
             elif args[0] == "pwd":
                 print(os.getcwd())
+            elif args[0] == "cd":
+                os.chdir(args[1])
             else:
                 print(f"{command}: command not found")
 
