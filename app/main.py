@@ -32,7 +32,7 @@ def main():
                 try:
                     os.chdir(args[1])
                 except FileNotFoundError:
-                    print(f"cd: {args[1]} No such file or directory")
+                    print(f"cd: {args[1]}: No such file or directory")
             else:
                 print(f"{command}: command not found")
 
